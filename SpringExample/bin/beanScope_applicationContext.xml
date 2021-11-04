@@ -7,9 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!--  load property files -->
-	<context:property-placeholder location="classpath:app.properties" />
-    <!-- Define your beans here -->
+	<!-- Define your beans here -->
     
     <!-- define the dependency -->
     <bean id="myFortuneService"
@@ -24,16 +22,6 @@
  			<constructor-arg ref="myFortuneService"/>
  	</bean>
     
-    <bean id="myCricketCoach"
-    	class="springDemo.CricketCoach">
-            <property name="fortuneService" ref="myFortuneService"/>
-            <property name="athlete" ref="myAthlete"/>
-            <property name="emailAddress" value="${foo.email}"/>
-            <property name="team" value="${foo.team}"/>
-               
-    </bean>
-    
-
 </beans>
 
 
